@@ -13,12 +13,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call(UserRolesSeeder::class);
 
         // Create one admin
         User::factory()->admin()->create([
             'first_name' => 'Admin',
             'last_name' => 'User',
             'email' => 'admin@example.com',
+            'user_role_id' => 1,
         ]);
 
         // Create one regular user
@@ -26,6 +28,7 @@ class DatabaseSeeder extends Seeder
             'first_name' => 'Regular',
             'last_name' => 'User',
             'email' => 'user@example.com',
+            'user_role_id' => 2
         ]);
     }
 }
