@@ -1,6 +1,8 @@
 <?php
 
 namespace Database\Seeders;
+
+use App\Models\Task;
 use App\Models\User;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -30,5 +32,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'user@example.com',
             'user_role_id' => 2
         ]);
+
+        // Create 10 sample tasks
+        Task::factory(10)->create();
     }
 }
