@@ -12,8 +12,8 @@ This is a Laravel application with Docker integration for easy setup and deploym
 1. **Clone the repository:**
 
     ```sh
-    git clone https://github.com/your-username/your-repo.git
-    cd your-repo
+    git clone https://github.com/Levanrd/laravel-crud.git
+    cd laravel-crud
     ```
 
 2. **Request the `.env` file:**
