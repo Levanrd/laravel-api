@@ -15,6 +15,9 @@ class LogoutController extends Controller
         //
         auth()->guard('web')->logout();
 
-        return response()->json(['message' => 'Logout successfully.'], 200);
+        $response = response()->json(['message' => 'Logout successfully.'], 200);
+
+        return $response->withCookie(cookie()->forget('laravel_session'))
+                        ->withCookie(cookie()->forget('XSRF-TOKEN'));
     }
 }

@@ -21,6 +21,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/phpinfo', function () {
+    return view('phpinfo');
+});
+
 Route::prefix('auth')->group(function () {
     Route::post('/login', LoginController::class);
     Route::post('/logout', LogoutController::class);

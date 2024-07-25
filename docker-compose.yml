@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.9'
 
 services:
   app:
@@ -14,6 +14,9 @@ services:
       - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
       - laravel
+
+    environment:
+      PHP_EXTENSIONS: mysqli pdo_mysql
 
   webserver:
     image: nginx:alpine
@@ -41,7 +44,7 @@ services:
       - dbdata:/var/lib/mysql
     networks:
       - laravel
-  
+
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
