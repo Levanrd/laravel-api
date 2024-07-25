@@ -25,13 +25,18 @@ class DatabaseSeeder extends Seeder
             'user_role_id' => 1,
         ]);
 
-        // Create one regular user
-        User::factory()->create([
-            'first_name' => 'Regular',
-            'last_name' => 'User',
-            'email' => 'user@example.com',
+        // Create 5 users with 10 tasks each
+        User::factory(5)->has(Task::factory(10))->create([
             'user_role_id' => 2
         ]);
+
+        // Create one regular user
+        // User::factory()->create([
+        //     'first_name' => 'Regular',
+        //     'last_name' => 'User',
+        //     'email' => 'user@example.com',
+        //     'user_role_id' => 2
+        // ]);
 
         // Create 10 sample tasks
         Task::factory(10)->create();
